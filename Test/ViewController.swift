@@ -12,10 +12,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Hey")
+        print("Hey")
+        print("Hey")
+        print("Hey")
+        print("Hey")
         
         print("Bag")
         print("bag")
         print("Hey")
+    }
+    
+    func getImage(){
+        let image = UIImage(named: "Lol")
     }
 
 
