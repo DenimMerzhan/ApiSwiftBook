@@ -26,8 +26,9 @@ class ViewController: UIViewController {
         let image = UIImage(named: "Lol")
     }
     
-    func getMops(){
-        
+    func getMops() -> UIImage {
+        let mopsImage = UIImage(named: "Mops")
+        return mopsImage
     }
 
 
