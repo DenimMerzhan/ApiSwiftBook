@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     }
     
     func getImage(){
-        
+        let image = UIImage(named: "Lol")
     }
 
 
