@@ -22,8 +22,9 @@ class ViewController: UIViewController {
         print("Hey")
     }
     
-    func getImage(){
-        let image = UIImage(named: "Lol")
+    func getImage() -> UIImage {
+        let image = UIImage(named: "image")
+        return image
     }
 
 
