@@ -21,6 +21,10 @@ class ViewController: UIViewController {
         print("bag")
         print("Hey")
     }
+    
+    func getImage(){
+        
+    }
 
 
 }
