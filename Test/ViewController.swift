@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -22,12 +23,12 @@ class ViewController: UIViewController {
         print("Hey")
     }
     
-    func getImage() -> UIImage {
+    func getImage() -> UIImage? {
         let image = UIImage(named: "image")
         return image
     }
     
-    func getMops() -> UIImage {
+    func getMops() -> UIImage? {
         let mopsImage = UIImage(named: "Mops")
         return mopsImage
     }
