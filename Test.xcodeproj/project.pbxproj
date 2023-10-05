@@ -56,7 +56,6 @@
 				BBD40FE7438A82970229DFAD /* Pods-Test.debug.xcconfig */,
 				EF97148EF4EB06586787FCDB /* Pods-Test.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -99,6 +98,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF36D9392ACDA83B0000DF0A /* Build configuration list for PBXNativeTarget "Test" */;
 			buildPhases = (
+				CF0BC71F2ACE9FAA008AF418 /* ShellScript */,
 				2B9A04A8F9BF9F10F3D4F512 /* [CP] Check Pods Manifest.lock */,
 				CF36D9212ACDA83B0000DF0A /* Sources */,
 				CF36D9222ACDA83B0000DF0A /* Frameworks */,
@@ -199,6 +199,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Test/Pods-Test-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		CF0BC71F2ACE9FAA008AF418 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

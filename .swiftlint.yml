@@ -1,0 +1,16 @@
+disabled_rules: [vertical_whitespace,trailing_whitespace,trailing_newline,identifier_name]
+
+line_length:
+  - 300 # warning
+  - 400 # error
+  
+function_body_length:
+  - 300 # warning
+  - 400 # error
+  
+cyclomatic_complexity:
+  - 60 # warning
+  - 61 # error
+  
+force_cast:
+  severity: warning # explicitly
