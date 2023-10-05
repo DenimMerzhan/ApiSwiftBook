@@ -25,18 +25,26 @@ class ViewController: UIViewController, ConstraintRelatableTarget {
         self.view.addSubview(tableView)
         self.view.backgroundColor = .white
         tableView.register(UserCell.self, forCellReuseIdentifier: UserCell.identifier)
-        setupConstrains()
+        setupView()
     }
     
-    func setupConstrains() {
+    func setupView() {
         tableView.snp.makeConstraints { make in
             tableView.snp.makeConstraints { make in
                 make.left.top.right.bottom.equalTo(self.view)
             }
         }
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        navigationItem.title = "Chat"
+        
     }
 
 
+    @objc func addTapped(){
+        
+    }
+    
 }
 
 
