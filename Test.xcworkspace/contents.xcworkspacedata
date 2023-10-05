@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/denimmerzan/Desktop/IOS/Test/Test/NetworkService.swift">
-   </FileRef>
-   <FileRef
       location = "group:Test.xcodeproj">
    </FileRef>
    <FileRef
