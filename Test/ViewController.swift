@@ -9,31 +9,51 @@ import UIKit
 import SnapKit
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ConstraintRelatableTarget {
 
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .grouped)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.estimatedRowHeight = 80
+        tableView.rowHeight = UITableView.automaticDimension
+        return tableView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Hey")
-        print("Hey")
-        print("Hey")
-        print("Hey")
-        print("Hey")
-        let rockStar = "s"
-        print("Bag")
-        print("bag")
-        print("Hey")
+        self.view.addSubview(tableView)
+        self.view.backgroundColor = .white
+        tableView.register(UserCell.self, forCellReuseIdentifier: UserCell.identifier)
+        setupConstrains()
     }
     
-    func getImage() -> UIImage? {
-        let image = UIImage(named: "image")
-        return image
-    }
-    
-    func getMops() -> UIImage? {
-        let mopsImage = UIImage(named: "Mops")
-        return mopsImage
+    func setupConstrains() {
+        tableView.snp.makeConstraints { make in
+            tableView.snp.makeConstraints { make in
+                make.left.top.right.bottom.equalTo(self.view)
+            }
+        }
     }
 
 
 }
 
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: UserCell.identifier) as? UserCell {
+            cell.label.text = "Mops"
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
+    
+}
