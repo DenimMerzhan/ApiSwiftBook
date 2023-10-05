@@ -41,8 +41,10 @@ class ViewController: UIViewController, ConstraintRelatableTarget {
     }
 
 
-    @objc func addTapped(){
-        
+    @objc func addTapped() {
+        let newUserController = NewUserController()
+        newUserController.title = "Create New User"
+        navigationController?.pushViewController(newUserController, animated: true)
     }
     
 }
