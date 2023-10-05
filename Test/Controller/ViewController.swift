@@ -10,7 +10,9 @@ import SnapKit
 
 
 class ViewController: UIViewController, ConstraintRelatableTarget {
-
+    
+    private let networkManager = NetworkService.shared
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.dataSource = self
@@ -39,8 +41,8 @@ class ViewController: UIViewController, ConstraintRelatableTarget {
         navigationItem.title = "Chat"
         
     }
-
-
+    
+    
     @objc func addTapped() {
         let newUserController = NewUserController()
         newUserController.title = "Create New User"
@@ -49,6 +51,7 @@ class ViewController: UIViewController, ConstraintRelatableTarget {
     
 }
 
+// MARK: - TableView
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -58,11 +61,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: UserCell.identifier) as? UserCell {
-            cell.label.text = "Mops"
-            return cell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: UserCell.identifier) as? UserCell else {return UITableViewCell() }
+        
+        cell.label.text = "Mops"
+        if let url = URL(string: "https://reqres.in/img/faces/7-image.jpg") {
+            networkManager.fetchAvatar(from: url) { data in
+                cell.avatar.image = UIImage(data: data)
+            }
         }
-        return UITableViewCell()
+        
+        return cell
     }
     
     

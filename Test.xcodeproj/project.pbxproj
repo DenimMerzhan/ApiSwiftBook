@@ -10,6 +10,9 @@
 		CCBE56E83CB93E423194C755 /* Pods_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4ED8F228FD0A33737C0064F /* Pods_Test.framework */; };
 		CF0BC7212ACEAC07008AF418 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0BC7202ACEAC07008AF418 /* UserCell.swift */; };
 		CF0BC7292ACECB11008AF418 /* NewUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0BC7282ACECB11008AF418 /* NewUserController.swift */; };
+		CF0BC72D2ACEF72A008AF418 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0BC72C2ACEF72A008AF418 /* UserModel.swift */; };
+		CF0BC7302ACEF743008AF418 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0BC72F2ACEF743008AF418 /* NetworkService.swift */; };
+		CF0BC7332ACEF775008AF418 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0BC7322ACEF775008AF418 /* User.swift */; };
 		CF36D9292ACDA83B0000DF0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF36D9282ACDA83B0000DF0A /* AppDelegate.swift */; };
 		CF36D92B2ACDA83B0000DF0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF36D92A2ACDA83B0000DF0A /* SceneDelegate.swift */; };
 		CF36D92D2ACDA83B0000DF0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF36D92C2ACDA83B0000DF0A /* ViewController.swift */; };
@@ -23,6 +26,9 @@
 		BBD40FE7438A82970229DFAD /* Pods-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.debug.xcconfig"; path = "Target Support Files/Pods-Test/Pods-Test.debug.xcconfig"; sourceTree = "<group>"; };
 		CF0BC7202ACEAC07008AF418 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		CF0BC7282ACECB11008AF418 /* NewUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserController.swift; sourceTree = "<group>"; };
+		CF0BC72C2ACEF72A008AF418 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		CF0BC72F2ACEF743008AF418 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkService.swift; path = /Users/denimmerzan/Desktop/IOS/Test/Test/NetworkService.swift; sourceTree = "<absolute>"; };
+		CF0BC7322ACEF775008AF418 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CF36D9252ACDA83B0000DF0A /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF36D9282ACDA83B0000DF0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF36D92A2ACDA83B0000DF0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +69,40 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CF0BC72A2ACEF70C008AF418 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CF36D92C2ACDA83B0000DF0A /* ViewController.swift */,
+				CF0BC7282ACECB11008AF418 /* NewUserController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CF0BC72B2ACEF71B008AF418 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CF0BC7202ACEAC07008AF418 /* UserCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CF0BC72E2ACEF731008AF418 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF0BC72C2ACEF72A008AF418 /* UserModel.swift */,
+				CF0BC7322ACEF775008AF418 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CF0BC7312ACEF763008AF418 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				CF0BC72F2ACEF743008AF418 /* NetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
 		CF36D91C2ACDA83A0000DF0A = {
 			isa = PBXGroup;
 			children = (
@@ -86,9 +126,10 @@
 			children = (
 				CF36D9282ACDA83B0000DF0A /* AppDelegate.swift */,
 				CF36D92A2ACDA83B0000DF0A /* SceneDelegate.swift */,
-				CF36D92C2ACDA83B0000DF0A /* ViewController.swift */,
-				CF0BC7282ACECB11008AF418 /* NewUserController.swift */,
-				CF0BC7202ACEAC07008AF418 /* UserCell.swift */,
+				CF0BC7312ACEF763008AF418 /* NetworkService */,
+				CF0BC72E2ACEF731008AF418 /* Model */,
+				CF0BC72A2ACEF70C008AF418 /* Controller */,
+				CF0BC72B2ACEF71B008AF418 /* View */,
 				CF36D92E2ACDA83B0000DF0A /* Main.storyboard */,
 				CF36D9312ACDA83B0000DF0A /* Assets.xcassets */,
 				CF36D9332ACDA83B0000DF0A /* LaunchScreen.storyboard */,
@@ -234,7 +275,10 @@
 				CF0BC7212ACEAC07008AF418 /* UserCell.swift in Sources */,
 				CF36D92D2ACDA83B0000DF0A /* ViewController.swift in Sources */,
 				CF36D9292ACDA83B0000DF0A /* AppDelegate.swift in Sources */,
+				CF0BC7332ACEF775008AF418 /* User.swift in Sources */,
+				CF0BC72D2ACEF72A008AF418 /* UserModel.swift in Sources */,
 				CF36D92B2ACDA83B0000DF0A /* SceneDelegate.swift in Sources */,
+				CF0BC7302ACEF743008AF418 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
