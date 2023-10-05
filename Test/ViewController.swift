@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         print("Hey")
         print("Hey")
         print("Hey")
-        
+        let rockStar = "s"
         print("Bag")
         print("bag")
         print("Hey")
