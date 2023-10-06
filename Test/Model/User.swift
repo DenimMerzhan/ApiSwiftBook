@@ -7,11 +7,15 @@
 
 import Foundation
 
-struct User {
+struct User: Decodable {
     
-    var id: String
+    var id: Int
     var email: String
     var firstName: String
     var lastName: String
     var avatar: URL
+}
+
+struct UsersQuery: Decodable {
+    let data: [User]
 }
