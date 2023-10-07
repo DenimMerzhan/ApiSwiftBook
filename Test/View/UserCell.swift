@@ -39,6 +39,7 @@ class UserCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.addSubview(stackView)
+        setupConstrain()
         setupCell()
     }
     
@@ -46,7 +47,7 @@ class UserCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupCell() {
+    func setupConstrain() {
         stackView.addArrangedSubview(avatar)
         stackView.addArrangedSubview(label)
         
@@ -56,6 +57,10 @@ class UserCell: UITableViewCell {
         avatar.snp.makeConstraints { make in
             make.width.height.equalTo(80)
         }
+    }
+    
+    func setupCell(){
+        label.text = "  " + " "
     }
     
 }

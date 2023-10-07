@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class NewUserController: UIViewController {
+class AddUserController: UIViewController {
     
     var firstNameTextField: UITextField = {
         let textField = UITextField()

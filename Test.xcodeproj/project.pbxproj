@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		CCBE56E83CB93E423194C755 /* Pods_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4ED8F228FD0A33737C0064F /* Pods_Test.framework */; };
 		CF0BC7212ACEAC07008AF418 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0BC7202ACEAC07008AF418 /* UserCell.swift */; };
-		CF0BC7292ACECB11008AF418 /* NewUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0BC7282ACECB11008AF418 /* NewUserController.swift */; };
+		CF0BC7292ACECB11008AF418 /* AddUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0BC7282ACECB11008AF418 /* AddUserController.swift */; };
 		CF0BC72D2ACEF72A008AF418 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0BC72C2ACEF72A008AF418 /* UserModel.swift */; };
 		CF0BC7332ACEF775008AF418 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0BC7322ACEF775008AF418 /* User.swift */; };
 		CF0BC7352ACEFB1D008AF418 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0BC7342ACEFB1D008AF418 /* NetworkService.swift */; };
+		CF27684A2AD19C2F000572EB /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2768492AD19C2F000572EB /* DetailController.swift */; };
 		CF36D9292ACDA83B0000DF0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF36D9282ACDA83B0000DF0A /* AppDelegate.swift */; };
 		CF36D92B2ACDA83B0000DF0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF36D92A2ACDA83B0000DF0A /* SceneDelegate.swift */; };
 		CF36D92D2ACDA83B0000DF0A /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF36D92C2ACDA83B0000DF0A /* UsersListViewController.swift */; };
@@ -25,10 +26,11 @@
 		A4ED8F228FD0A33737C0064F /* Pods_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBD40FE7438A82970229DFAD /* Pods-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.debug.xcconfig"; path = "Target Support Files/Pods-Test/Pods-Test.debug.xcconfig"; sourceTree = "<group>"; };
 		CF0BC7202ACEAC07008AF418 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
-		CF0BC7282ACECB11008AF418 /* NewUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserController.swift; sourceTree = "<group>"; };
+		CF0BC7282ACECB11008AF418 /* AddUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserController.swift; sourceTree = "<group>"; };
 		CF0BC72C2ACEF72A008AF418 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		CF0BC7322ACEF775008AF418 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CF0BC7342ACEFB1D008AF418 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		CF2768492AD19C2F000572EB /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		CF36D9252ACDA83B0000DF0A /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF36D9282ACDA83B0000DF0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF36D92A2ACDA83B0000DF0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,7 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				CF36D92C2ACDA83B0000DF0A /* UsersListViewController.swift */,
-				CF0BC7282ACECB11008AF418 /* NewUserController.swift */,
+				CF2768492AD19C2F000572EB /* DetailController.swift */,
+				CF0BC7282ACECB11008AF418 /* AddUserController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -271,7 +274,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF0BC7292ACECB11008AF418 /* NewUserController.swift in Sources */,
+				CF0BC7292ACECB11008AF418 /* AddUserController.swift in Sources */,
+				CF27684A2AD19C2F000572EB /* DetailController.swift in Sources */,
 				CF0BC7212ACEAC07008AF418 /* UserCell.swift in Sources */,
 				CF0BC7352ACEFB1D008AF418 /* NetworkService.swift in Sources */,
 				CF36D92D2ACDA83B0000DF0A /* UsersListViewController.swift in Sources */,

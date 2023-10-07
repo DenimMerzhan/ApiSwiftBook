@@ -13,6 +13,7 @@ class UsersListViewController: UIViewController, ConstraintRelatableTarget {
     
     private let networkManager = NetworkService.shared
     private var users: [User]?
+    private var selectedUser: User?
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
@@ -55,7 +56,7 @@ class UsersListViewController: UIViewController, ConstraintRelatableTarget {
     
     
     @objc func addTapped() {
-        let newUserController = NewUserController()
+        let newUserController = AddUserController()
         newUserController.title = "Create New User"
         navigationController?.pushViewController(newUserController, animated: true)
     }
@@ -81,6 +82,13 @@ extension UsersListViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let user = users?[indexPath.row] else {return}
+        let detailVC = DetailController()
+        detailVC.user = user
+        navigationController?.pushViewController(detailVC, animated: true)
     }
     
     
