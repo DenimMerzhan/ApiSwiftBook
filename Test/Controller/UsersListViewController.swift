@@ -75,17 +75,13 @@ extension UsersListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: UserCell.identifier) as? UserCell,
               let user = users?[indexPath.row] else {return UITableViewCell() }
-        
-        cell.label.text = user.firstName
-        networkManager.fetchAvatar(from: user.avatar) { data in
-            cell.avatar.image = UIImage(data: data)
-        }
-        
+        cell.configure(with: user)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let user = users?[indexPath.row] else {return}
+        tableView.deselectRow(at: indexPath, animated: true)
         let detailVC = DetailController()
         detailVC.user = user
         navigationController?.pushViewController(detailVC, animated: true)

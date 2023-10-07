@@ -46,10 +46,7 @@ class DetailController: UIViewController {
             make.top.equalTo(avatar.snp.bottom).offset(20)
             make.left.right.equalTo(self.view)
         }
-        
-        networkService.fetchAvatar(from: user.avatar) { [weak self] data in
-            self?.avatar.image = UIImage(data: data)
-        }
+        avatar.kf.setImage(with: user.avatar)
     }
     
 }

@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import SnapKit
+import Kingfisher
 
 class UserCell: UITableViewCell {
     
@@ -40,7 +41,6 @@ class UserCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.addSubview(stackView)
         setupConstrain()
-        setupCell()
     }
     
     required init?(coder: NSCoder) {
@@ -59,8 +59,9 @@ class UserCell: UITableViewCell {
         }
     }
     
-    func setupCell(){
-        label.text = "  " + " "
+    func configure(with user: User) {
+        label.text = user.firstName + " " + user.lastName
+        avatar.kf.setImage(with: user.avatar)
     }
     
 }
