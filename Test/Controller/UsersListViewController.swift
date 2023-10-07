@@ -34,10 +34,10 @@ class UsersListViewController: UIViewController, ConstraintRelatableTarget {
             switch result {
             case .success(let users):
                 self?.users = users
-                self?.tableView.reloadData()
             case .failure(let error):
                 print("Error with fetch users \(error)")
             }
+            self?.tableView.reloadData()
         }
     }
     

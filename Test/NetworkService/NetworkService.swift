@@ -41,7 +41,7 @@ class NetworkService {
             
             guard let data = data else {
                 print(error?.localizedDescription ?? "No error decsription")
-                completion(.failure(.noData))
+                sendFailure(with: .noData)
                 return
             }
             
@@ -50,8 +50,16 @@ class NetworkService {
                     completion(.success(usersQuery.data))
                 }
             } else {
-                completion(.failure(.decodingError))
+                sendFailure(with: .decodingError)
             }
+            
+            
+            func sendFailure(with error: NetworkError) {
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+            }
+            
         }.resume()
     }
     
