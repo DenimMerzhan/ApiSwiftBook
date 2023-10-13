@@ -8,7 +8,21 @@
 import Foundation
 
 enum NetworkError: Error {
-    case invaidURL, decodingError, noData
+    
+    case noData
+    case decodingError
+    case noUsers
+    
+    var description: String {
+        switch self {
+        case .noData:
+            return "Отсутствуют данные"
+        case .decodingError:
+            return "Ошибка декодирования"
+        case .noUsers:
+            return "Отуствуют пользователи"
+        }
+    }
 }
 
 
@@ -18,65 +32,32 @@ class NetworkService {
     
     private init() {}
     
-    func fetchAvatar(from url: URL, completion: @escaping (Data) -> Void) {
-        
-        DispatchQueue.global(qos: .default).async {
-            
-            guard let imageData = try? Data(contentsOf: url) else {return}
-            
-            DispatchQueue.main.async {
-                completion(imageData)
-            }
-
-        }
-    }
-    
-    func fetchUsers(completion: @escaping (Result<[User], NetworkError>) -> Void) {
-        guard let url = Link.allUsers.url else {return}
+    func fetchUsers(with url: URL, completion: @escaping (Result<Data, NetworkError>) -> Void) {
         
         URLSession.shared.dataTask(with: url) { data, response, error in
-            if let response = response as? HTTPURLResponse {
-                print("response status code - \(response.statusCode)")
-            }
-            
+           
             guard let data = data else {
                 print(error?.localizedDescription ?? "No error decsription")
                 sendFailure(with: .noData)
                 return
             }
             
-            if let usersQuery = UserModel().decodeJson(data: data, type: UsersQuery.self, keyDecoding: .convertFromSnakeCase) {
+            if let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) { /// 200-299 значит ответ был успешный
+                print("response status code - \(response.statusCode)")
                 DispatchQueue.main.async {
-                    completion(.success(usersQuery.data))
+                    completion(.success(data))
                 }
-            } else {
-                sendFailure(with: .decodingError)
             }
-            
             
             func sendFailure(with error: NetworkError) {
                 DispatchQueue.main.async {
                     completion(.failure(error))
                 }
             }
-            
         }.resume()
     }
     
 }
 
 
-// MARK: - Link
 
-extension NetworkService {
-    enum Link {
-        case allUsers
-        
-        var url: URL? {
-            switch self {
-            case .allUsers:
-                return URL(string: "https://reqres.in/api/users")
-            }
-        }
-    }
-}

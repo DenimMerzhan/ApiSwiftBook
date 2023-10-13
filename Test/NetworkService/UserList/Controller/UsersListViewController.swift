@@ -11,9 +11,16 @@ import SnapKit
 
 class UsersListViewController: UIViewController, ConstraintRelatableTarget {
     
-    private let networkManager = NetworkService.shared
+    private let networkManager =  UserListNetworService()
     private var users: [User]?
     private var selectedUser: User?
+    
+    private lazy var spinner: UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView(style: .large)
+        spinner.startAnimating()
+        spinner.hidesWhenStopped = true
+        return spinner
+    }()
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
@@ -26,31 +33,52 @@ class UsersListViewController: UIViewController, ConstraintRelatableTarget {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+        setupConstraints()
+    }
+    
+    func setupView() {
+
         self.view.addSubview(tableView)
+        self.view.addSubview(spinner)
         self.view.backgroundColor = .white
         tableView.register(UserCell.self, forCellReuseIdentifier: UserCell.identifier)
-        setupView()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        navigationItem.title = "Chat"
         
         networkManager.fetchUsers { [weak self] result in
             switch result {
             case .success(let users):
                 self?.users = users
+                self?.tableView.reloadData()
+                self?.spinner.stopAnimating()
             case .failure(let error):
-                print("Error with fetch users \(error)")
+                self?.showAlert(with: error)
             }
-            self?.tableView.reloadData()
         }
+        
     }
     
-    func setupView() {
+    func setupConstraints() {
         tableView.snp.makeConstraints { make in
             tableView.snp.makeConstraints { make in
                 make.left.top.right.bottom.equalTo(self.view)
             }
         }
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
-        navigationItem.title = "Chat"
+        spinner.snp.makeConstraints { make in
+            make.centerX.centerY.equalTo(self.view)
+        }
+    }
+    
+    func showAlert(with error: NetworkError){
+        let alert = UIAlertController(title: error.description, message: nil, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ок", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+    
+    func showSpinner(in view: UIView){
         
     }
     
