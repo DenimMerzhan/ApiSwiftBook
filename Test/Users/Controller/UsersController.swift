@@ -111,6 +111,13 @@ extension UsersController: UITableViewDelegate, UITableViewDataSource {
         detailVC.user = user
         navigationController?.pushViewController(detailVC, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            guard let id = users?[indexPath.row].id else {return}
+            deleteUser(id: id, at: indexPath)
+        }
+    }
 }
 
 // MARK: - UserAdded
@@ -119,5 +126,18 @@ extension UsersController: AddUserDelegate {
     func userSuccessAdded(user: User) {
         self.users?.append(user)
         tableView.reloadData()
+    }
+}
+
+extension UsersController {
+    func deleteUser(id: Int, at indexPath: IndexPath) {
+        networkManager.deleteUser(id: id) { [weak self] success in
+            if success {
+                self?.users?.remove(at: indexPath.row)
+                self?.tableView.deleteRows(at: [indexPath], with: .automatic)
+            } else {
+                self?.showAlert(with: .deletingError)
+            }
+        }
     }
 }

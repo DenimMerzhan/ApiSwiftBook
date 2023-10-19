@@ -36,6 +36,14 @@ final class UserListNetworService {
             }
         }
     }
+    
+    func deleteUser(id: Int,completion: @escaping (Bool) -> ()){
+        guard let stringUrl = Link.singleUser.url?.absoluteString, let userUrl = URL(string: stringUrl + "\(id)") else {return}
+        
+        NetworkService.shared.deleteData(with: userUrl) { success in
+            completion(success)
+        }
+    }
 }
 
 
@@ -44,6 +52,7 @@ final class UserListNetworService {
 extension UserListNetworService {
     enum Link {
         case allUsers
+        case singleUser
         case withNoData
         case withDecodingError
         case withNoUsers
@@ -52,6 +61,8 @@ extension UserListNetworService {
             switch self {
             case .allUsers:
                 return URL(string: "https://reqres.in/api/users/?delay=2")
+            case .singleUser:
+                return URL(string: "https://reqres.in/api/users/")
             case .withNoData:
                 return URL(string: "https://reqres.int/api/users")
             case .withDecodingError:

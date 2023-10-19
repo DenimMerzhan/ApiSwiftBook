@@ -12,6 +12,7 @@ enum NetworkError: Error {
     case noData
     case decodingError
     case noUsers
+    case deletingError
     
     var description: String {
         switch self {
@@ -21,6 +22,8 @@ enum NetworkError: Error {
             return "Ошибка декодирования"
         case .noUsers:
             return "Отуствуют пользователи"
+        case .deletingError:
+            return "Ошибка удаления пользователя"
         }
     }
 }
@@ -75,6 +78,32 @@ class NetworkService {
         }.resume()
     }
     
+    
+    func deleteData(with url: URL, completion: @escaping (Bool) -> Void) {
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        
+        URLSession.shared.dataTask(with: request) { _, response, error in
+            
+            if let error = error {
+                print("Ошибка удаления пользователя - \(error)")
+                DispatchQueue.main.async {
+                    completion(false)
+                    return
+                }
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                DispatchQueue.main.async {
+                    if response.statusCode == 204 {
+                        completion(true)
+                    } else {
+                        completion(false)
+                    }
+                }
+            }
+        }.resume()
+    }
 }
 
 
