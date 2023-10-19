@@ -16,10 +16,13 @@
 		CF27684A2AD19C2F000572EB /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2768492AD19C2F000572EB /* DetailController.swift */; };
 		CF36D9292ACDA83B0000DF0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF36D9282ACDA83B0000DF0A /* AppDelegate.swift */; };
 		CF36D92B2ACDA83B0000DF0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF36D92A2ACDA83B0000DF0A /* SceneDelegate.swift */; };
-		CF36D92D2ACDA83B0000DF0A /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF36D92C2ACDA83B0000DF0A /* UsersListViewController.swift */; };
+		CF36D92D2ACDA83B0000DF0A /* UsersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF36D92C2ACDA83B0000DF0A /* UsersController.swift */; };
 		CF36D9302ACDA83B0000DF0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF36D92E2ACDA83B0000DF0A /* Main.storyboard */; };
 		CF36D9322ACDA83B0000DF0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF36D9312ACDA83B0000DF0A /* Assets.xcassets */; };
 		CF36D9352ACDA83B0000DF0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF36D9332ACDA83B0000DF0A /* LaunchScreen.storyboard */; };
+		CF5D95062AE030E1001E2BDB /* UsersQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5D95052AE030E1001E2BDB /* UsersQuery.swift */; };
+		CF5D95092AE0322D001E2BDB /* AddUserNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5D95082AE0322D001E2BDB /* AddUserNetworkService.swift */; };
+		CF5D950D2AE0348E001E2BDB /* DecodeJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5D950C2AE0348E001E2BDB /* DecodeJson.swift */; };
 		CFE6F8D02AD97EA900F8BCA2 /* UserListNetworService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6F8CF2AD97EA900F8BCA2 /* UserListNetworService.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,11 +38,14 @@
 		CF36D9252ACDA83B0000DF0A /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF36D9282ACDA83B0000DF0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF36D92A2ACDA83B0000DF0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CF36D92C2ACDA83B0000DF0A /* UsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
+		CF36D92C2ACDA83B0000DF0A /* UsersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersController.swift; sourceTree = "<group>"; };
 		CF36D92F2ACDA83B0000DF0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF36D9312ACDA83B0000DF0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF36D9342ACDA83B0000DF0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF36D9362ACDA83B0000DF0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF5D95052AE030E1001E2BDB /* UsersQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersQuery.swift; sourceTree = "<group>"; };
+		CF5D95082AE0322D001E2BDB /* AddUserNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserNetworkService.swift; sourceTree = "<group>"; };
+		CF5D950C2AE0348E001E2BDB /* DecodeJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeJson.swift; sourceTree = "<group>"; };
 		CFE6F8CF2AD97EA900F8BCA2 /* UserListNetworService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListNetworService.swift; sourceTree = "<group>"; };
 		EF97148EF4EB06586787FCDB /* Pods-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.release.xcconfig"; path = "Target Support Files/Pods-Test/Pods-Test.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,9 +82,8 @@
 		CF0BC72A2ACEF70C008AF418 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CF36D92C2ACDA83B0000DF0A /* UsersListViewController.swift */,
+				CF36D92C2ACDA83B0000DF0A /* UsersController.swift */,
 				CF2768492AD19C2F000572EB /* DetailController.swift */,
-				CF0BC7282ACECB11008AF418 /* AddUserController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -104,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				CF0BC7342ACEFB1D008AF418 /* NetworkService.swift */,
-				CFE6F8CD2AD97E6B00F8BCA2 /* UserList */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -130,9 +134,9 @@
 		CF36D9272ACDA83B0000DF0A /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				CF36D9282ACDA83B0000DF0A /* AppDelegate.swift */,
-				CF36D92A2ACDA83B0000DF0A /* SceneDelegate.swift */,
-				CF0BC7312ACEF763008AF418 /* NetworkService */,
+				CF5D94FF2AE02DBA001E2BDB /* Application */,
+				CFE6F8CD2AD97E6B00F8BCA2 /* Users */,
+				CF5D95012AE02EE2001E2BDB /* AddUser */,
 				CF36D92E2ACDA83B0000DF0A /* Main.storyboard */,
 				CF36D9312ACDA83B0000DF0A /* Assets.xcassets */,
 				CF36D9332ACDA83B0000DF0A /* LaunchScreen.storyboard */,
@@ -141,7 +145,68 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
-		CFE6F8CD2AD97E6B00F8BCA2 /* UserList */ = {
+		CF5D94FF2AE02DBA001E2BDB /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				CF5D950B2AE03485001E2BDB /* Model */,
+				CF5D95002AE02DC4001E2BDB /* Controller */,
+				CF0BC7312ACEF763008AF418 /* NetworkService */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		CF5D95002AE02DC4001E2BDB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CF36D92A2ACDA83B0000DF0A /* SceneDelegate.swift */,
+				CF36D9282ACDA83B0000DF0A /* AppDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CF5D95012AE02EE2001E2BDB /* AddUser */ = {
+			isa = PBXGroup;
+			children = (
+				CF5D95032AE030CF001E2BDB /* Model */,
+				CF5D95022AE030BD001E2BDB /* Controller */,
+				CF5D95072AE0320E001E2BDB /* AddUserNetworkService */,
+			);
+			path = AddUser;
+			sourceTree = "<group>";
+		};
+		CF5D95022AE030BD001E2BDB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CF0BC7282ACECB11008AF418 /* AddUserController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CF5D95032AE030CF001E2BDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF5D95052AE030E1001E2BDB /* UsersQuery.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CF5D95072AE0320E001E2BDB /* AddUserNetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				CF5D95082AE0322D001E2BDB /* AddUserNetworkService.swift */,
+			);
+			path = AddUserNetworkService;
+			sourceTree = "<group>";
+		};
+		CF5D950B2AE03485001E2BDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF5D950C2AE0348E001E2BDB /* DecodeJson.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CFE6F8CD2AD97E6B00F8BCA2 /* Users */ = {
 			isa = PBXGroup;
 			children = (
 				CFE6F8CE2AD97E9600F8BCA2 /* UserListNetworService */,
@@ -149,7 +214,7 @@
 				CF0BC72B2ACEF71B008AF418 /* View */,
 				CF0BC72A2ACEF70C008AF418 /* Controller */,
 			);
-			path = UserList;
+			path = Users;
 			sourceTree = "<group>";
 		};
 		CFE6F8CE2AD97E9600F8BCA2 /* UserListNetworService */ = {
@@ -297,11 +362,14 @@
 				CF27684A2AD19C2F000572EB /* DetailController.swift in Sources */,
 				CF0BC7212ACEAC07008AF418 /* UserCell.swift in Sources */,
 				CF0BC7352ACEFB1D008AF418 /* NetworkService.swift in Sources */,
-				CF36D92D2ACDA83B0000DF0A /* UsersListViewController.swift in Sources */,
+				CF36D92D2ACDA83B0000DF0A /* UsersController.swift in Sources */,
+				CF5D950D2AE0348E001E2BDB /* DecodeJson.swift in Sources */,
 				CF36D9292ACDA83B0000DF0A /* AppDelegate.swift in Sources */,
 				CF0BC7332ACEF775008AF418 /* User.swift in Sources */,
 				CF0BC72D2ACEF72A008AF418 /* UserModel.swift in Sources */,
 				CFE6F8D02AD97EA900F8BCA2 /* UserListNetworService.swift in Sources */,
+				CF5D95092AE0322D001E2BDB /* AddUserNetworkService.swift in Sources */,
+				CF5D95062AE030E1001E2BDB /* UsersQuery.swift in Sources */,
 				CF36D92B2ACDA83B0000DF0A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

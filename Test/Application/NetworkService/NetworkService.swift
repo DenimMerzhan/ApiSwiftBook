@@ -32,7 +32,7 @@ class NetworkService {
     
     private init() {}
     
-    func fetchUsers(with url: URL, completion: @escaping (Result<Data, NetworkError>) -> Void) {
+    func getData(with url: URL, completion: @escaping (Result<Data, NetworkError>) -> Void) {
         
         URLSession.shared.dataTask(with: url) { data, response, error in
            
@@ -53,6 +53,24 @@ class NetworkService {
                 DispatchQueue.main.async {
                     completion(.failure(error))
                 }
+            }
+        }.resume()
+    }
+    
+    func postUser(_ data: Data?, with url: URL, completion: @escaping (Result<Data, NetworkError>) -> Void) {
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        
+        request.httpBody = data
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            guard let data = data else {return}
+            if let error = error {
+                print(error)
+            }
+            
+            DispatchQueue.main.async {
+                completion(.success(data))
             }
         }.resume()
     }

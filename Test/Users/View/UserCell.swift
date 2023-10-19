@@ -61,7 +61,12 @@ class UserCell: UITableViewCell {
     
     func configure(with user: User) {
         label.text = user.firstName + " " + user.lastName
-        avatar.kf.setImage(with: user.avatar)
+        if let url = user.avatar {
+            avatar.kf.setImage(with: url)
+        }else {
+            avatar.image = UIImage(systemName: "person.crop.circle")
+        }
+        
     }
     
 }

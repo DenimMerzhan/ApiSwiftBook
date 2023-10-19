@@ -10,13 +10,13 @@ import UIKit
 
 class DetailController: UIViewController {
     
-    var user: User!
+    var user: User?
     private let networkService = NetworkService.shared
     
     private lazy var label: UILabel = {
         let label = UILabel(frame: .zero)
         label.font = .systemFont(ofSize: 20, weight: .semibold)
-        label.text = user.firstName + " " + user.lastName
+        label.text = user?.firstName ?? "" + " " + (user?.lastName ?? "")
         label.textAlignment = .center
         return label
     }()
@@ -36,6 +36,7 @@ class DetailController: UIViewController {
     }
     
     func setupView() {
+        
         avatar.snp.makeConstraints { make in
             make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top).offset(20)
             make.left.right.equalTo(self.view)
@@ -46,7 +47,12 @@ class DetailController: UIViewController {
             make.top.equalTo(avatar.snp.bottom).offset(20)
             make.left.right.equalTo(self.view)
         }
-        avatar.kf.setImage(with: user.avatar)
+        if let url = user?.avatar {
+            avatar.kf.setImage(with: url)
+        } else {
+            avatar.image = UIImage(systemName: "person.crop.circle")
+        }
+        
     }
     
 }

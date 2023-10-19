@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 
-class UsersListViewController: UIViewController, ConstraintRelatableTarget {
+class UsersController: UIViewController, ConstraintRelatableTarget {
     
     private let networkManager =  UserListNetworService()
     private var users: [User]?
@@ -71,20 +71,17 @@ class UsersListViewController: UIViewController, ConstraintRelatableTarget {
         }
     }
     
-    func showAlert(with error: NetworkError){
+    func showAlert(with error: NetworkError) {
         let alert = UIAlertController(title: error.description, message: nil, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ок", style: .default)
         alert.addAction(okAction)
         present(alert, animated: true)
     }
     
-    func showSpinner(in view: UIView){
-        
-    }
-    
     
     @objc func addTapped() {
         let newUserController = AddUserController()
+        newUserController.delegate = self
         newUserController.title = "Create New User"
         navigationController?.pushViewController(newUserController, animated: true)
     }
@@ -93,7 +90,7 @@ class UsersListViewController: UIViewController, ConstraintRelatableTarget {
 
 // MARK: - TableView
 
-extension UsersListViewController: UITableViewDelegate, UITableViewDataSource {
+extension UsersController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -114,6 +111,13 @@ extension UsersListViewController: UITableViewDelegate, UITableViewDataSource {
         detailVC.user = user
         navigationController?.pushViewController(detailVC, animated: true)
     }
-    
-    
+}
+
+// MARK: - UserAdded
+
+extension UsersController: AddUserDelegate {
+    func userSuccessAdded(user: User) {
+        self.users?.append(user)
+        tableView.reloadData()
+    }
 }

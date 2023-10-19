@@ -1,17 +1,15 @@
 //
-//  UserModel.swift
+//  DecodeJson.swift
 //  Test
 //
-//  Created by Деним Мержан on 05.10.23.
+//  Created by Деним Мержан on 18.10.23.
 //
 
 import Foundation
 
-
-struct UserModel {
+struct DecodeJson {
     
-    
-    func decodeJson<T: Decodable>(data: Data, type: T.Type, keyDecoding: JSONDecoder.KeyDecodingStrategy?) -> T? {
+    static func decode<T: Decodable>(data: Data, type: T.Type, keyDecoding: JSONDecoder.KeyDecodingStrategy?) -> T? {
         let jsonDecoder = JSONDecoder()
         
         if let keyDecoding = keyDecoding {
@@ -26,4 +24,5 @@ struct UserModel {
             return nil
         }
     }
+    
 }
