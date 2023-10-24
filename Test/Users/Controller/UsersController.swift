@@ -38,7 +38,7 @@ class UsersController: UIViewController, ConstraintRelatableTarget {
     }
     
     func setupView() {
-
+        
         self.view.addSubview(tableView)
         self.view.addSubview(spinner)
         self.view.backgroundColor = .white

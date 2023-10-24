@@ -24,6 +24,7 @@
 		CF5D95092AE0322D001E2BDB /* AddUserNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5D95082AE0322D001E2BDB /* AddUserNetworkService.swift */; };
 		CF5D950D2AE0348E001E2BDB /* DecodeJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF5D950C2AE0348E001E2BDB /* DecodeJson.swift */; };
 		CFE6F8D02AD97EA900F8BCA2 /* UserListNetworService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE6F8CF2AD97EA900F8BCA2 /* UserListNetworService.swift */; };
+		CFFA53022AE83A5E00D8A911 /* UsersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFA53012AE83A5E00D8A911 /* UsersPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		CF5D95082AE0322D001E2BDB /* AddUserNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserNetworkService.swift; sourceTree = "<group>"; };
 		CF5D950C2AE0348E001E2BDB /* DecodeJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodeJson.swift; sourceTree = "<group>"; };
 		CFE6F8CF2AD97EA900F8BCA2 /* UserListNetworService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListNetworService.swift; sourceTree = "<group>"; };
+		CFFA53012AE83A5E00D8A911 /* UsersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPresenter.swift; sourceTree = "<group>"; };
 		EF97148EF4EB06586787FCDB /* Pods-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.release.xcconfig"; path = "Target Support Files/Pods-Test/Pods-Test.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -209,6 +211,7 @@
 		CFE6F8CD2AD97E6B00F8BCA2 /* Users */ = {
 			isa = PBXGroup;
 			children = (
+				CFFA53002AE83A4800D8A911 /* UsersPresenter */,
 				CFE6F8CE2AD97E9600F8BCA2 /* UserListNetworService */,
 				CF0BC72E2ACEF731008AF418 /* Model */,
 				CF0BC72B2ACEF71B008AF418 /* View */,
@@ -223,6 +226,14 @@
 				CFE6F8CF2AD97EA900F8BCA2 /* UserListNetworService.swift */,
 			);
 			path = UserListNetworService;
+			sourceTree = "<group>";
+		};
+		CFFA53002AE83A4800D8A911 /* UsersPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				CFFA53012AE83A5E00D8A911 /* UsersPresenter.swift */,
+			);
+			path = UsersPresenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,6 +380,7 @@
 				CF0BC72D2ACEF72A008AF418 /* UserModel.swift in Sources */,
 				CFE6F8D02AD97EA900F8BCA2 /* UserListNetworService.swift in Sources */,
 				CF5D95092AE0322D001E2BDB /* AddUserNetworkService.swift in Sources */,
+				CFFA53022AE83A5E00D8A911 /* UsersPresenter.swift in Sources */,
 				CF5D95062AE030E1001E2BDB /* UsersQuery.swift in Sources */,
 				CF36D92B2ACDA83B0000DF0A /* SceneDelegate.swift in Sources */,
 			);
